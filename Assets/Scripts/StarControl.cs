@@ -18,7 +18,7 @@ public class StarControl : MonoBehaviour {
 				new Vector3(Random.Range(-w,w),Random.Range(-h,h),0f),
 				Quaternion.identity);
 			instance.transform.SetParent(TransformRange);
-			instance.transform.localScale=Vector3.one*1;
+			instance.transform.localScale=Vector3.one*3;
 		}
 	}
 	
