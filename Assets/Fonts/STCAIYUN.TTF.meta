@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 704b0bc8c1bad92499958c4610be4e78
+timeCreated: 1542976860
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: STCaiyun
+  fontNames:
+  - STCaiyun
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 2
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
