@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: c7e129db1650bb6418db8c8b97c1ffd8
+timeCreated: 1543146088
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FZShuTi
+  fontNames:
+  - FZShuTi
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
