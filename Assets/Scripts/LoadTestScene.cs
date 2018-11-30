@@ -16,4 +16,8 @@ public class LoadTestScene : MonoBehaviour {
 	public void Load(){
 		SceneManager.LoadScene("PlayingScene");
 	}
+
+	public void GoBack(){
+		SceneManager.LoadScene("Main");
+	}
 }
