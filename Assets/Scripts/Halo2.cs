@@ -47,7 +47,7 @@ public class Halo2 : MonoBehaviour {
             // 顺时针旋转  
             parPos[i].angle = (parPos[i].angle - Random.Range(0.5f,3f)) % 360f;           
             float radian = parPos[i].angle / 180 * Mathf.PI;
-            parArr[i].position = new Vector3(parPos[i].radius * Mathf.Cos(radian), 0f, parPos[i].radius * Mathf.Sin(radian));
+            parArr[i].position = new Vector3(parPos[i].radius * Mathf.Cos(radian), parPos[i].radius * Mathf.Sin(radian), 0f);
         }
         parSys.SetParticles(parArr, parArr.Length);
     }
@@ -58,9 +58,10 @@ public class Halo2 : MonoBehaviour {
         {
             float min = Random.Range(1f, (r + R) / (2 * r)) * r;
             float max = Random.Range((r + R) / (2 * R), 1.2f) * R;
+            min=0f;
+            max=0f;
             float radius = Random.Range(min, max);
             // 生成随机半径，主要集中在环中间
-
             float angle = Random.Range(0f, 360f);
             float radian = angle * 180 / Mathf.PI;
             // 生成随机角度
@@ -68,8 +69,8 @@ public class Halo2 : MonoBehaviour {
             parPos[i] = new Position(radius, angle);
             parArr[i].position =
                 new Vector3(parPos[i].radius * Mathf.Cos(radian),
-                            0f,
-                            parPos[i].radius * Mathf.Sin(radian));
+                            parPos[i].radius * Mathf.Sin(radian),
+                            0f);
             // 设定粒子的随机位置
         }
         parSys.SetParticles(parArr, parArr.Length);

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
     public float scale_change_speed;
 
+    public float maxVelocity;
 	// Create private references to the rigidbody component on the player, and the count of pick up objects picked up so far
 	private Rigidbody rb;
     private float scale;
@@ -55,6 +56,9 @@ public class PlayerController : MonoBehaviour {
 		// Add a physical force to our Player rigidbody using our 'movement' Vector3 above, 
 		// multiplying it by 'speed' - our public player speed that appears in the inspector
 		rb.AddForce (movement * speed);
+        var velocity = this.rb.velocity;
+        if (velocity.magnitude>maxVelocity)
+            this.rb.velocity = velocity.normalized*maxVelocity;
 	}
 
 	// When this game object intersects a collider with 'is trigger' checked, 

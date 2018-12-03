@@ -279,6 +279,21 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 54305021507744452, guid: 177116fd2df6d8a408ac4356aab7208b,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54305021507744452, guid: 177116fd2df6d8a408ac4356aab7208b,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592122733198040, guid: 177116fd2df6d8a408ac4356aab7208b,
+        type: 2}
+      propertyPath: maxVelocity
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 177116fd2df6d8a408ac4356aab7208b, type: 2}
   m_IsPrefabAsset: 0
@@ -722,6 +737,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 135465296939402724, guid: e4ce33588bd4233419b3a8c04d289f72,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114958116937952208, guid: e4ce33588bd4233419b3a8c04d289f72,
+        type: 2}
+      propertyPath: pass
+      value: 
+      objectReference: {fileID: 1095261091}
+    - target: {fileID: 114958116937952208, guid: e4ce33588bd4233419b3a8c04d289f72,
+        type: 2}
+      propertyPath: confirm
+      value: 
+      objectReference: {fileID: 1956076580}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ce33588bd4233419b3a8c04d289f72, type: 2}
   m_IsPrefabAsset: 0

@@ -57,7 +57,7 @@ public class Halo1 : MonoBehaviour {
         for (int i = 0; i < num; i++)
         {
             float min = Random.Range(1f, (r + R) / (2 * r)) * r;
-            float max = Random.Range((r + R) / (2 * R), 1.2f) * R;
+            float max = Random.Range((r + R) / (2 * R), 1f) * R;
             float radius = Random.Range(min, max);
             // 生成随机半径，主要集中在环中间
 

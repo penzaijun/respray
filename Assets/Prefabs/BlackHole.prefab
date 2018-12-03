@@ -28,7 +28,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1688309203447334
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,9 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 261c8973a85ccac4eb8530f4bf024975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 100
-  size: 0.1
-  r: 0.5
+  num: 1
+  size: 2
+  r: 1
   R: 1
 --- !u!114 &114855475329080718
 MonoBehaviour:
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9f628fe8c6355438edbfeb8a5d93f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  num: 50
+  num: 20
   size: 0.2
   r: 5
   R: 5
@@ -274,7 +274,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
