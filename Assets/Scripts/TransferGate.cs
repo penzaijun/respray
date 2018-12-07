@@ -47,8 +47,9 @@ public class TransferGate : MonoBehaviour {
             // 获取碰撞的方向
             Vector3 v = other.attachedRigidbody.velocity.normalized;
             other.transform.position = v3Target;
-            // 测试
-            Debug.Log(other.GetComponent<PlayerController>().getF());
+
+            // 测试全局变量是否传递
+            // Debug.Log(GameObject.FindGameObjectWithTag("SceneNum").GetComponent<SceneNum>().getSN());
         }
     }
 

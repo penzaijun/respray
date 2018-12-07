@@ -14,10 +14,16 @@ public class LoadTestScene : MonoBehaviour {
 		
 	}
 	public void Load(){
-		SceneManager.LoadScene("PlayingScene");
-	}
 
-	public void GoBack(){
+        // 测试用，将sceneNUm设置为1
+        // GameObject.FindGameObjectWithTag("SceneNum").GetComponent<SceneNum>().setSN(1);
+
+        SceneManager.LoadScene("PlayingScene");
+        // 不知道这里有什么变化
+        // SceneManager.LoadSceneAsync("PlayingScene");
+    }
+
+    public void GoBack(){
 		SceneManager.LoadScene("Main");
 	}
 }
