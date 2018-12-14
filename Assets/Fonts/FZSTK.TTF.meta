@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: c7e129db1650bb6418db8c8b97c1ffd8
-timeCreated: 1543146088
-licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -15,8 +13,10 @@ TrueTypeFontImporter:
   - FZShuTi
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 3
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 1
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

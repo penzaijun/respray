@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 849cdb7e752afa74b920f04d4ff5045e
-timeCreated: 1543145815
-licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -15,8 +13,10 @@ TrueTypeFontImporter:
   - Mistral
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
