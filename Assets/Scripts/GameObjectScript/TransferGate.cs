@@ -6,10 +6,14 @@ public class TransferGate : MonoBehaviour {
 
     // 传送目标
     public TransferGate tgTarget;
+    // 输出轴的角度
+    public float outAngle;
     // 传送目标的位置
     private Vector3 v3Target;
     // 判断当前是否可以有效
     private bool isEff;
+    // 传送目标的正弦余弦
+    private Vector3 v3Out;
 
     // 旋转的组件，绕z轴旋转
     private Vector3 ax = new Vector3(0.0f, 0.0f, 1.0f);
@@ -20,7 +24,9 @@ public class TransferGate : MonoBehaviour {
         v3Target = tgTarget.transform.position;
         // 获取目标的半径
         isEff = true;
-	}
+        // 获取输出角度
+        v3Out = new Vector3(Mathf.Sin(Mathf.Deg2Rad * outAngle), Mathf.Cos(Mathf.Deg2Rad * outAngle), 0);
+    }
 	
 	// Update is called once per frame
     // 实时旋转
@@ -44,10 +50,10 @@ public class TransferGate : MonoBehaviour {
         // 只有玩家完全进入才会触发
         if (other.CompareTag("Player") && isEff)
         {
-            // 获取碰撞的方向
-            Vector3 v = other.attachedRigidbody.velocity.normalized;
+            // 传送位置
             other.transform.position = v3Target;
-
+            // 设置输出的方向
+            other.attachedRigidbody.velocity = other.attachedRigidbody.velocity.magnitude * tgTarget.v3Out;
             // 测试全局变量是否传递
             // Debug.Log(GameObject.FindGameObjectWithTag("SceneNum").GetComponent<SceneNum>().getSN());
         }

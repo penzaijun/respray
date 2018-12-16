@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tgTarget: {fileID: 0}
+  outAngle: 0
 --- !u!135 &135484773591463030
 SphereCollider:
   m_ObjectHideFlags: 1
