@@ -6,6 +6,8 @@ public class TransferGate : MonoBehaviour {
 
     // 传送目标
     public TransferGate tgTarget;
+    // 判断输出是否定向
+    public bool isOriented = false;
     // 输出轴的角度
     public float outAngle;
     // 传送目标的位置
@@ -53,7 +55,11 @@ public class TransferGate : MonoBehaviour {
             // 传送位置
             other.transform.position = v3Target;
             // 设置输出的方向
-            other.attachedRigidbody.velocity = other.attachedRigidbody.velocity.magnitude * tgTarget.v3Out;
+            if (isOriented)
+            {
+                other.attachedRigidbody.velocity = other.attachedRigidbody.velocity.magnitude * tgTarget.v3Out;
+            }
+            
             // 测试全局变量是否传递
             // Debug.Log(GameObject.FindGameObjectWithTag("SceneNum").GetComponent<SceneNum>().getSN());
         }

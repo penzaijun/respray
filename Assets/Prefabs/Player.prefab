@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   scale_change_speed: 0.001
+  maxVelocity: 15
 --- !u!135 &135648900443214510
 SphereCollider:
   m_ObjectHideFlags: 1

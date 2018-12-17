@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tgTarget: {fileID: 114926021812674766}
+  isOriented: 0
   outAngle: 0
 --- !u!114 &114926021812674766
 MonoBehaviour:
@@ -214,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tgTarget: {fileID: 114013941039439096}
+  isOriented: 0
   outAngle: 0
 --- !u!135 &135036014581981046
 SphereCollider:
