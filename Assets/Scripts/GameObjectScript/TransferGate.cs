@@ -21,7 +21,7 @@ public class TransferGate : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // 获取目标的坐标
-        v3Target = tgTarget.transform.position;
+        //v3Target = tgTarget.transform.position;
         // 获取目标的半径
         isEff = true;
         // 获取输出角度
