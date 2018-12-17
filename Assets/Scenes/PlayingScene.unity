@@ -361,12 +361,12 @@ Prefab:
     - target: {fileID: 224680378549055608, guid: 5fdb8caf97806644b896e0f1611481af,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 9.424817
+      value: 13.04
       objectReference: {fileID: 0}
     - target: {fileID: 224680378549055608, guid: 5fdb8caf97806644b896e0f1611481af,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1.8037934
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 224680378549055608, guid: 5fdb8caf97806644b896e0f1611481af,
         type: 2}
@@ -408,6 +408,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 23238889843826052, guid: 5fdb8caf97806644b896e0f1611481af,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 048ff52b07d857d46b9195c5d1d3b4c5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fdb8caf97806644b896e0f1611481af, type: 2}
   m_IsPrefabAsset: 0
@@ -476,6 +481,7 @@ GameObject:
   - component: {fileID: 832792180}
   - component: {fileID: 832792179}
   - component: {fileID: 832792178}
+  - component: {fileID: 832792182}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -561,6 +567,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &832792182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 832792177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eaaf17f436098b4989046a243eef04f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permit_vel: 0
+  elastic_ratio: 1
 --- !u!1001 &1023739229
 Prefab:
   m_ObjectHideFlags: 0

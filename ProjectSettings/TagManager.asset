@@ -8,6 +8,11 @@ TagManager:
   - TransferGate
   - Flag
   - SceneNum
+  - ControlGate
+  - SpeedGate
+  - Shooter
+  - AbsorbBound
+  - Bound
   layers:
   - Default
   - TransparentFX
