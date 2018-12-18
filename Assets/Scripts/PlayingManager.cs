@@ -11,6 +11,16 @@ public class PlayingManager : MonoBehaviour {
 	public GameObject transferGate;
 	public Vector3 pos = new Vector3(0.0f, 0.0f, 0.0f);
 
+	public float abs(float a){
+		if(a<=0) return -a;
+		else return a;
+	}
+	public bool sign(float a){
+		if(a<=0) return false;
+		else return true;
+	}
+
+
 	// Use this for initialization
 	void Start () {
 		//load the scene json from file
@@ -29,6 +39,8 @@ public class PlayingManager : MonoBehaviour {
 			float force=float.Parse(jd["black_hole"][i]["force"].ToString());
 			Vector3 positions_black_hole = new Vector3(x,y,0f);
 			GameObject instance = Instantiate(hole,positions_black_hole,Quaternion.identity);
+			instance.GetComponent<ForceField>().magn = abs(force);
+			instance.GetComponent<ForceField>().isAttract = !sign(force);
 			BlackHoles.Add(instance);
 		}
 		
