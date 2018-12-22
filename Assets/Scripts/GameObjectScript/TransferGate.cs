@@ -11,7 +11,7 @@ public class TransferGate : MonoBehaviour {
     // 输出轴的角度
     public float outAngle;
     // 传送目标的位置
-    private Vector3 v3Target;
+    public Vector3 v3Target;
     // 判断当前是否可以有效
     private bool isEff;
     // 传送目标的正弦余弦
