@@ -16,8 +16,8 @@ public class ScrollCircle : ScrollRect
     protected override void Start()
     {
         // 获取当前玩家
-        player = GameObject.Find("Player");
-
+        player = GameObject.FindWithTag("Player");
+        if (player==null) Debug.Log("Player error");
         base.Start();
 
         // 能移动的半径 = 摇杆的宽 * Dis

@@ -7,6 +7,9 @@ public class Flag : MonoBehaviour {
     public GameObject pass;
     public GameObject confirm;
 
+    void Awake() {
+
+    }
 	// Use this for initialization
 	void Start () {
             pass.SetActive(false);

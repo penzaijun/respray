@@ -163,8 +163,11 @@ public class PlayingManager : MonoBehaviour {
 			float y=float.Parse(jd["player"]["y"].ToString());
 			float size=float.Parse(jd["player"]["size"].ToString());
 			Vector3 pos=new Vector3(x,y,0f);
-			player.tag = "Player";
-			Player = Instantiate(player,pos,Quaternion.identity);
+			//Player = Instantiate(player,pos,Quaternion.identity);
+			Player=GameObject.Find("Player");
+			Player.GetComponent<SphereCollider>().isTrigger=false;
+			Player.tag = "Player";
+			Player.transform.position=pos;
 			Player.transform.localScale *= size;
 		}
 
@@ -176,9 +179,11 @@ public class PlayingManager : MonoBehaviour {
 			float y=float.Parse(jd["Flag"][i]["y"].ToString());
 			float size=float.Parse(jd["Flag"][i]["size"].ToString());
 			Vector3 pos=new Vector3(x,y,0f);
-			GameObject flag_object = Instantiate(flag,pos,Quaternion.identity);
-			flag_object.transform.localScale *= size;
-			Flags.Add(flag_object);
+			//GameObject flag_object = Instantiate(flag,pos,Quaternion.identity);
+			flag=GameObject.Find("Flag");
+			//flag_object.transform.localScale *= size;
+			//Flags.Add(flag_object);
+			flag.transform.position=pos;
 		}
 
 		//load Bound
@@ -192,6 +197,7 @@ public class PlayingManager : MonoBehaviour {
 			Vector3 shape=new Vector3(w,h,1f);
 			GameObject bound_object = Instantiate(bound,pos,Quaternion.identity);
 			bound_object.transform.localScale = shape;
+			bound_object.GetComponent<BoxCollider>().isTrigger=false;
 			Bounds.Add(bound_object);
 		}
 
