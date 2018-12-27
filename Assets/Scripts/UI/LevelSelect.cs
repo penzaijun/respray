@@ -62,7 +62,9 @@ public class LevelSelect : MonoBehaviour,
         if (starnum_new < starnum) return;
         starnum = starnum_new;
         for (int i = 2; i >= starnum; i--)
-            star[i].GetComponent<SpriteRenderer>().color = Color.black;
+            star[i].SetActive(false);
+            //star[i].GetComponent<SpriteRenderer>().color = Color.black;
+
     }
 
     public void SetLevelNum(int level)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Flag : MonoBehaviour {
     public GameObject pass;
@@ -30,7 +31,7 @@ public class Flag : MonoBehaviour {
             confirm.SetActive(true);
             GameObject InterSceneData = GameObject.Find("InterSceneData");
             InterSceneData.GetComponent<InterSceneData>().SetStarNum(collider.gameObject.GetComponent<PlayerController>().getF(),InterSceneData.GetComponent<InterSceneData>().getLevel());
-
+            
         }
     }
 
