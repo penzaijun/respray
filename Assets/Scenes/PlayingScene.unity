@@ -902,6 +902,7 @@ MonoBehaviour:
   Shooters: []
   SpeedGates: []
   Player: {fileID: 1944924423259128, guid: 177116fd2df6d8a408ac4356aab7208b, type: 2}
+  level: 0
 --- !u!124 &1692367901
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1090,7 +1091,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1956076585}
-        m_MethodName: GoBack
+        m_MethodName: BackToMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1144,9 +1145,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956076580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15da0e18ea95ea1448a835ec97c50761, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b4ff5783f0faba4cba2d53ac7a29fa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InterSceneData: {fileID: 0}
 --- !u!1001 &2077951100
 Prefab:
   m_ObjectHideFlags: 0

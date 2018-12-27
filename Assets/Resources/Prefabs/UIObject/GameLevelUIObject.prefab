@@ -175,7 +175,7 @@ MonoBehaviour:
   - {fileID: 1197845447528726}
   - {fileID: 1989156577542086}
   - {fileID: 1953075081194128}
-  starnum: 0
+  starnum: 1
 --- !u!114 &114897232834947248
 MonoBehaviour:
   m_ObjectHideFlags: 1

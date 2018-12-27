@@ -17,6 +17,7 @@ public class PlayingManager : MonoBehaviour {
 	public List <GameObject> Shooters=new List <GameObject> ();
 	public List <GameObject> SpeedGates=new List <GameObject> ();
 	public GameObject Player = null;
+    public int level;
 
 	public float abs(float a){
 		if(a<=0) return -a;
