@@ -13,6 +13,7 @@ TagManager:
   - Shooter
   - AbsorbBound
   - Bound
+  - ComponentNum
   layers:
   - Default
   - TransparentFX
