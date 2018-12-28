@@ -93,11 +93,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1712231874119322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec96a4cadf6c6ac4e9ec36d71b71bc62, type: 3}
+  m_Script: {fileID: 11500000, guid: ec24a300edbfa7c4cbb71b229d7538ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tgTarget: {fileID: 0}
+  isOriented: 0
   outAngle: 0
+  v3Target: {x: 0, y: 0, z: 0}
 --- !u!135 &135484773591463030
 SphereCollider:
   m_ObjectHideFlags: 1

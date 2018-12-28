@@ -10,6 +10,9 @@ public class MainSceneManager : MonoBehaviour {
     public GameObject Welcome;
     private GameObject InterSceneData;
     
+    public GameObject GetWelcome(){
+        return this.Welcome;
+    }
 	// Use this for initialization
 	void Start () {
         InterSceneData = GameObject.Find("InterSceneData");

@@ -9,7 +9,6 @@ public class Flag : MonoBehaviour {
     public GameObject confirm;
 
     void Awake() {
-
     }
 	// Use this for initialization
 	void Start () {

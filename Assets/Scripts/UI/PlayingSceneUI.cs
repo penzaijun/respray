@@ -23,12 +23,13 @@ public class PlayingSceneUI : MonoBehaviour {
     {
         GameObject player = GameObject.Find("Player");
         int starnum = player.GetComponent<PlayerController>().getF();
-        SceneManager.LoadScene("Main");
-        GameObject root = GameObject.Find("Main Camera");
-        GameObject Welcome = root.GetComponent<MainSceneManager>().Welcome;
-        GameObject Choose = root.GetComponent<MainSceneManager>().Choose;
-        Debug.Log("delete");
-        Welcome.SetActive(false);
-        Choose.SetActive(true);
+        InterSceneData.GetComponent<InterSceneData>().PlayingSceneToMain();
+        // SceneManager.LoadScene("Main");
+        // GameObject root = GameObject.FindWithTag("MainCamera");
+        // GameObject Welcome = root.GetComponent<MainSceneManager>().Welcome;
+        // GameObject Choose = root.GetComponent<MainSceneManager>().Choose;
+        // Debug.Log("delete");
+        // Welcome.SetActive(false);
+        // Choose.SetActive(true);
     }
 }

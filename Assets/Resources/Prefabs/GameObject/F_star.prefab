@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33947685429119120}
   - component: {fileID: 23238889843826052}
   - component: {fileID: 135491428119582342}
-  - component: {fileID: 114785890488132858}
+  - component: {fileID: 114868556963214062}
   m_Layer: 0
   m_Name: F_star
   m_TagString: Pick Up
@@ -72,7 +72,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176292978624186}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114785890488132858
+--- !u!114 &114868556963214062
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1176292978624186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51103e1c13bdf0d46b4df9bbb197e62a, type: 3}
+  m_Script: {fileID: 11500000, guid: 520bff5243c4f4144b23cceb519d8ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135491428119582342
