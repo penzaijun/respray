@@ -10,7 +10,7 @@ public class InterSceneData : MonoBehaviour {
     public int LastNotLockLevel=1;
     public GameObject temp;
     static bool created = false;
-
+    private AsyncOperation _p;
     private void Awake()
     {
         // 设置不可销毁
@@ -75,14 +75,10 @@ public class InterSceneData : MonoBehaviour {
             print("level num out of range");
         }
     }
-    private IEnumerator myWait(){
+    private IEnumerator EndofLoading(){
         while(SceneManager.GetActiveScene().name!="Main"){
-            yield return null;
+             yield return null;
         }
-    }
-    public IEnumerator PlayingSceneToMain(){
-        SceneManager.LoadScene("Main");
-        yield return StartCoroutine(myWait());
         GameObject root = GameObject.Find("Main Camera");
         temp=root;
         temp=GameObject.Find("Flag");
@@ -92,7 +88,10 @@ public class InterSceneData : MonoBehaviour {
         Debug.Log("delete");
         Welcome.SetActive(false);
         Choose.SetActive(true);
-
+    }
+    public void PlayingSceneToMain(){
+        _p=SceneManager.LoadSceneAsync("Main");
+        StartCoroutine(EndofLoading());
     }
 
 }
