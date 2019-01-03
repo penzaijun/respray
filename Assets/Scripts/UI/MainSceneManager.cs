@@ -17,7 +17,6 @@ public class MainSceneManager : MonoBehaviour {
 	void Start () {
         InterSceneData = GameObject.Find("InterSceneData");
         int LastNotLockLevel = InterSceneData.GetComponent<InterSceneData>().LastNotLockLevel;
-        Debug.Log(LastNotLockLevel);
         for (int i=0;i<levelnum;i++)
         {
             GameObject level= Instantiate(Resources.Load("Prefabs/UIObject/GameLevelUIObject")) as GameObject;

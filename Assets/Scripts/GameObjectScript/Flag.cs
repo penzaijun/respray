@@ -29,7 +29,7 @@ public class Flag : MonoBehaviour {
             pass.SetActive(true);
             confirm.SetActive(true);
             GameObject InterSceneData = GameObject.Find("InterSceneData");
-            InterSceneData.GetComponent<InterSceneData>().SetStarNum(collider.gameObject.GetComponent<PlayerController>().getF(),InterSceneData.GetComponent<InterSceneData>().getLevel());
+            InterSceneData.GetComponent<InterSceneData>().SetStarNum(collider.gameObject.GetComponent<PlayerController>().getF(),InterSceneData.GetComponent<InterSceneData>().getLevelNum());
             
         }
     }

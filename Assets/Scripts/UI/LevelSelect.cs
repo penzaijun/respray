@@ -98,7 +98,7 @@ public class LevelSelect : MonoBehaviour,
         //   leftClick.Invoke();
         if (!islocked)
         {
-            GameObject.Find("InterSceneData").GetComponent<InterSceneData>().setLevel(levelnum);
+            GameObject.Find("InterSceneData").GetComponent<InterSceneData>().setLevelNum(levelnum);
             SceneManager.LoadScene("PlayingScene");
         }
             
