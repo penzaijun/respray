@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 224046919784312394}
   - component: {fileID: 222659110273812450}
   - component: {fileID: 114067705511523160}
+  - component: {fileID: 114202577946842604}
   m_Layer: 5
   m_Name: Mylocalmap
   m_TagString: Untagged
@@ -126,6 +127,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114202577946842604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930484847934698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f717718327d115147bb1f5545ae63289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 0
 --- !u!114 &114203201282473806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,6 +363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1f0c16799cbd9458e1220682af4885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  server: {fileID: 0}
+  Filename: 
+  i: 0
 --- !u!222 &222095096935910492
 CanvasRenderer:
   m_ObjectHideFlags: 1
