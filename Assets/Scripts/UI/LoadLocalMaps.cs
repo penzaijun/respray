@@ -24,7 +24,7 @@ public class LoadLocalMaps : MonoBehaviour {
 			Destroy (temp.GetChild(i).gameObject);
 		}
 		GameObject mymap=GameObject.Find("myCreation");
-		string dir = @".\Assets\Data";
+		string dir = @".\Assets\Data\Mymap";
 		DirectoryInfo theFolder = new DirectoryInfo(dir);
 		FileInfo[] fileInfo = theFolder.GetFiles();
 		foreach(FileInfo file in fileInfo){
@@ -36,6 +36,8 @@ public class LoadLocalMaps : MonoBehaviour {
 				myNewMission.transform.SetParent(myMaps.transform);
                 myNewMission.transform.localScale = new Vector3(1.69f, 1, 1);
                 myNewMission.GetComponentsInChildren<Text>()[0].text = MapName;
+                myNewMission.GetComponentsInChildren<OpenMymap>()[0].Filename = "Mymap/" + FirstName + ".json";
+                myNewMission.GetComponentsInChildren<Upload>()[0].Filename = "Mymap/" + FirstName+ ".json";
             }
 			//
 		}
@@ -47,7 +49,7 @@ public class LoadLocalMaps : MonoBehaviour {
             Destroy(temp.GetChild(i).gameObject);
         }
         GameObject downloadmap = GameObject.Find("Download");
-        dir = @".\Assets\Data\Download_";
+        dir = @".\Assets\Data\Download";
         theFolder = new DirectoryInfo(dir);
         fileInfo = theFolder.GetFiles();
         foreach (FileInfo file in fileInfo)
@@ -57,10 +59,11 @@ public class LoadLocalMaps : MonoBehaviour {
             string LastName = file.Name.Substring(file.Name.LastIndexOf(".") + 1, (file.Name.Length - file.Name.LastIndexOf(".") - 1)); //扩展名
             if (file.Name.EndsWith("json"))
             {
-                GameObject myNewMission = Instantiate(Resources.Load("Prefabs/UIObject/Download")) as GameObject;
+                GameObject myNewMission = Instantiate(Resources.Load("Prefabs/UIObject/Downloadmap")) as GameObject;
                 myNewMission.transform.SetParent(downloadMaps.transform);
                 myNewMission.transform.localScale = new Vector3(1.69f, 1, 1);
                 myNewMission.GetComponentsInChildren<Text>()[0].text = MapName;
+                myNewMission.GetComponentsInChildren<OpenMymap>()[0].Filename = "Download/" + FirstName + ".json";
             }
             //
         }

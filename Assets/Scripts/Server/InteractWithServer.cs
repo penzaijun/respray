@@ -34,7 +34,7 @@ public class InteractWithServer:MonoBehaviour
                 string str=System.Text.Encoding.ASCII.GetString(result,0,127);
                 int filesize=(result[128])|(result[129]<<8)|(result[130]<<16)|(result[131]<<24);
                 int k=0;while (str[k]!='\0')k++;
-                string filename=@".\Assets\Data\Download_\" + str.Substring(0,k);
+                string filename=@".\Assets\Data\" + str.Substring(0,k);
                 Debug.Log("第"+i+"个文件：" + filename);
                 Debug.Log("文件大小："+filesize);
                 int recvd_size=0;
@@ -81,8 +81,10 @@ public class InteractWithServer:MonoBehaviour
             sc.Send(fhead);for (int i=fhead.Length;i<128;i++) sc.Send(System.Text.Encoding.UTF8.GetBytes("\0"));
             sc.Send(BitConverter.GetBytes(fileSize));
             FileStream fileReader=new FileStream(@".\Assets\Data\"+fileName,FileMode.Open);
+            int j = 0;
             while (true){
                 int ret=fileReader.Read(result,0,1024);
+                Debug.Log((j++).ToString()) ;
                 if (ret!=0) sc.Send(result); else break;
             }
             fileReader.Close();

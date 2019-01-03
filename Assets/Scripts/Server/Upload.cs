@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Upload : MonoBehaviour {
 
-    //public GameObject mymap;
     public GameObject server;
     public string Filename;
-    public int i;
+
 	// Use this for initialization
 	void Start () {
-        //mymap = GameObject.Find("Mylocalmap");
-	}
+        //server = GameObject.Find("DownloadFromServer");
+        this.gameObject.GetComponent<Button>().onClick.AddListener(upload);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,7 +21,7 @@ public class Upload : MonoBehaviour {
 	}
 
     public void upload(){
-        //string Filename = mymap.GetComponent<Mymap>().Filename;
-        server.GetComponent<InteractWithServer>().Upload(Filename);
+        this.gameObject.GetComponent<InteractWithServer> ().Upload(Filename);
+        //server.GetComponent<InteractWithServer>().Upload(Filename);
     }
 }
