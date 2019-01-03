@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AddStar : MonoBehaviour
+public class AddBound : MonoBehaviour
 {
-    public GameObject starPrefab;
+    public GameObject boundPrefab;
 
     // Use this for initialization
     void Start()
@@ -17,12 +17,12 @@ public class AddStar : MonoBehaviour
 
     }
 
-    public void OnClickStar()
+    public void OnClickBound()
     {
-        GameObject star = GameObject.Instantiate(starPrefab, Vector3.zero, Quaternion.identity);
-        star.AddComponent<RectMouseDrag>();
-        MapEditList.starList.Add(star);
-        GlobalVriable.currentObject = star;
+        GameObject bound = GameObject.Instantiate(boundPrefab, Vector3.zero, Quaternion.identity);
+        bound.AddComponent<MouseDrag>();
+        MapEditList.boundList.Add(bound);
+        GlobalVriable.currentObject = bound;
 
         GameObject obj1 = GameObject.Find("Canvas/Panel/TextAngle");
         GameObject obj2 = GameObject.Find("Canvas/Panel/InputFieldAngle");

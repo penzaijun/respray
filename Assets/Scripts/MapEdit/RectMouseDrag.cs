@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.EventSystems;
  
  //UI图片拖拽功能类
- public class RectMouseDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+ public class RectMouseDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
  {
      [Header("是否精准拖拽")]
      public bool m_isPrecision;
@@ -66,4 +66,10 @@ using UnityEngine.EventSystems;
              m_rt.position = globalMousePos + m_offset;
          }
      }
- }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        //修改当前操作对象
+        GlobalVriable.currentObject = gameObject;
+    }
+}
