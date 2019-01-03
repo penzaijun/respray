@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour {
 
-    public int levelnum=25;
     public GameObject Choose;
     public GameObject Content;
     public GameObject Welcome;
+    public GameObject Mymap;
     private GameObject InterSceneData;
-    
-    public GameObject GetWelcome(){
-        return this.Welcome;
-    }
+        
 	// Use this for initialization
 	void Start () {
         InterSceneData = GameObject.Find("InterSceneData");
         int LastNotLockLevel = InterSceneData.GetComponent<InterSceneData>().LastNotLockLevel;
+        int levelnum = InterSceneData.GetComponent<InterSceneData>().TotalLevelNum;
         for (int i=0;i<levelnum;i++)
         {
             GameObject level= Instantiate(Resources.Load("Prefabs/UIObject/GameLevelUIObject")) as GameObject;
