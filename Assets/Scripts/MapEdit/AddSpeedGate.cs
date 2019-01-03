@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AddStar : MonoBehaviour
+public class AddSpeedGate : MonoBehaviour
 {
-    public GameObject starPrefab;
+    public GameObject speedGatePrefab;
 
     // Use this for initialization
     void Start()
@@ -17,12 +17,12 @@ public class AddStar : MonoBehaviour
 
     }
 
-    public void OnClickStar()
+    public void OnClickSpeedGate()
     {
-        GameObject star = GameObject.Instantiate(starPrefab, Vector3.zero, Quaternion.identity);
-        star.AddComponent<RectMouseDrag>();
-        MapEditList.starList.Add(star);
-        GlobalVriable.currentObject = star;
+        GameObject speedGate = GameObject.Instantiate(speedGatePrefab, Vector3.zero, Quaternion.identity);
+        speedGate.AddComponent<MouseDrag>();
+        MapEditList.speedGateList.Add(speedGate);
+        GlobalVriable.currentObject = speedGate;
 
         GameObject obj1 = GameObject.Find("Canvas/Panel/TextAngle");
         GameObject obj2 = GameObject.Find("Canvas/Panel/InputFieldAngle");

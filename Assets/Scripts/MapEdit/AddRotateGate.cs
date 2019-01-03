@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AddStar : MonoBehaviour
+public class AddRotateGate : MonoBehaviour
 {
-    public GameObject starPrefab;
+    public GameObject rotateGatePrefab;
 
     // Use this for initialization
     void Start()
@@ -17,12 +17,12 @@ public class AddStar : MonoBehaviour
 
     }
 
-    public void OnClickStar()
+    public void OnClickRotateGate()
     {
-        GameObject star = GameObject.Instantiate(starPrefab, Vector3.zero, Quaternion.identity);
-        star.AddComponent<RectMouseDrag>();
-        MapEditList.starList.Add(star);
-        GlobalVriable.currentObject = star;
+        GameObject rotateGate = GameObject.Instantiate(rotateGatePrefab, Vector3.zero, Quaternion.identity);
+        rotateGate.AddComponent<MouseDrag>();
+        MapEditList.rotateGateList.Add(rotateGate);
+        GlobalVriable.currentObject = rotateGate;
 
         GameObject obj1 = GameObject.Find("Canvas/Panel/TextAngle");
         GameObject obj2 = GameObject.Find("Canvas/Panel/InputFieldAngle");

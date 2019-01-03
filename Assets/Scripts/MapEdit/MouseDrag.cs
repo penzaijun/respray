@@ -35,6 +35,35 @@ public class MouseDrag : MonoBehaviour
         //因为我们的物体cube所处的是世界空间 鼠标是屏幕空间
         //需要将鼠标的屏幕空间转换成世界空间
         startPos = MyScreenPointToWorldPoint(Input.mousePosition, transform);
+        //修改当前操作对象
+        GlobalVriable.currentObject = gameObject;
+        if(GlobalVriable.currentObject.tag != "TransferGate")
+        {
+            GameObject obj1 = GameObject.Find("Canvas/Panel/TextAngle");
+            GameObject obj2 = GameObject.Find("Canvas/Panel/InputFieldAngle");
+            obj1.SetActive(false);
+            obj2.SetActive(false);
+            GameObject obj3 = GameObject.Find("Canvas/Panel/ButtonTarget");
+            obj3.SetActive(false);
+            GlobalVriable.isSetTarget = false;
+            GlobalVriable.transferGate = null;
+        }
+        else
+        {
+            GameObject obj1 = GameObject.Find("Canvas/Panel/TextAngle");
+            GameObject obj2 = GameObject.Find("Canvas/Panel/InputFieldAngle");
+            obj1.SetActive(true);
+            obj2.SetActive(true);
+            GameObject obj3 = GameObject.Find("Canvas/Panel/ButtonTarget");
+            obj3.SetActive(true);
+            if(GlobalVriable.isSetTarget == true)
+            {
+                GlobalVriable.transferGate.GetComponent<TransferGate>().tgTarget = GlobalVriable.currentObject.GetComponent<TransferGate>();
+                GlobalVriable.isSetTarget = false;
+                GlobalVriable.currentObject = GlobalVriable.transferGate;
+                GlobalVriable.transferGate = null;
+            }
+        }
     }
 
     private void OnMouseDrag()
