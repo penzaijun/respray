@@ -18,7 +18,8 @@ public class PlayingManager : MonoBehaviour {
 	public List <GameObject> SpeedGates=new List <GameObject> ();
 	public GameObject Player = null;
     public int level;
-    
+    private float Player_Defaultsize;
+    private Vector3 Player_Defaultpos;
 
 	public float abs(float a){
 		if(a<=0) return -a;
@@ -182,10 +183,10 @@ public class PlayingManager : MonoBehaviour {
         Vector3 pos = new Vector3(x, y, 0f);
         //Player = Instantiate(player,pos,Quaternion.identity);
         Player = GameObject.Find("Player");
-        Player.GetComponent<SphereCollider>().isTrigger = false;
-        Player.tag = "Player";
         Player.transform.position = pos;
+        Player_Defaultpos = pos;
         Player.transform.localScale *= size;
+        Player_Defaultsize = size;
     }
 
     //load end gate,must copy end gate
@@ -302,5 +303,12 @@ public class PlayingManager : MonoBehaviour {
         SpeedGate_object.GetComponent<SpeedGate>().vOut = out_vel;
         SpeedGates.Add(SpeedGate_object);
     }
+    }
+
+    void resetPlayer()
+    {
+        GameObject Player = (GameObject)Resources.Load("Prefabs/Player");
+        Player.transform.position = Player_Defaultpos;
+        Player.transform.localScale *= Player_Defaultsize;
     }
 }

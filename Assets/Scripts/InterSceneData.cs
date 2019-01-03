@@ -79,6 +79,7 @@ public class InterSceneData : MonoBehaviour
     {
         LevelNum = l;
         levelmapPath = "Assets/Data/LevelData/" + l.ToString() + ".json";
+        prestatus = "LevelSelect";
     }
 
     public string getPath()
@@ -89,6 +90,7 @@ public class InterSceneData : MonoBehaviour
     public void setPath(string path)
     {
         levelmapPath = path;
+        prestatus = "Mymap";
     }
 
     // 获取scene的序号
