@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 222294109848524740}
   - component: {fileID: 114568041992842094}
   - component: {fileID: 114449960395533506}
+  - component: {fileID: 114459273285131152}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -93,6 +94,7 @@ GameObject:
   - component: {fileID: 222659110273812450}
   - component: {fileID: 114067705511523160}
   - component: {fileID: 114930740033218140}
+  - component: {fileID: 114202577946842604}
   m_Layer: 5
   m_Name: Mylocalmap
   m_TagString: Untagged
@@ -129,7 +131,7 @@ MonoBehaviour:
   m_FillOrigin: 0
 --- !u!114 &114202577946842604
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930484847934698}
@@ -237,9 +239,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114568041992842094}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114459273285131152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1539790473366242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cdf20c722991a409f77f9d0974ba42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Filename: 
 --- !u!114 &114568041992842094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,18 +330,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114203201282473806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1061296633254164}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114714017058653488
