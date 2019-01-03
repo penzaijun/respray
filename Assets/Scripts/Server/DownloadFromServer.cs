@@ -21,7 +21,8 @@ using System.IO;
             }
             catch (Exception e)
             {
-                Console.WriteLine("连接失败！");
+            Console.WriteLine(e.Message);
+            Console.WriteLine("连接失败！");
                 return;
             }
             sc.Send(Encoding.UTF8.GetBytes("d"));

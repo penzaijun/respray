@@ -8,8 +8,8 @@ using System.IO;
 
 public class InterSceneData : MonoBehaviour
 {
-
-    private int LevelNum = 25;
+    public int TotalLevelNum;
+    private int LevelNum = 1;
     public int[] starnum;
     public int LastNotLockLevel = 1;
     public GameObject temp;
@@ -17,6 +17,7 @@ public class InterSceneData : MonoBehaviour
     private AsyncOperation _p;
     private const string userdataPath = "Assets/Data/LevelData/userdata.json";
     private string levelmapPath;
+    private string prestatus;
     private void Awake()
     {
         //force code to keep only one instance exist
@@ -38,23 +39,11 @@ public class InterSceneData : MonoBehaviour
         }
         else
         {
-
-            StreamReader json = File.OpenText(userdataPath);
-            string input = json.ReadToEnd();
-            JsonData jsonData = JsonMapper.ToObject(input);
-
-            //JsonData jsonData = JsonMapper.ToObject(File.ReadAllText(userdataPath));
-            string s = @"{'name':'盘子脸','数字':['123', '456']}";
-            JsonData data = LitJson.JsonMapper.ToObject(s);
-            Debug.Log(s);
-            Debug.Log(data["name"].ToJson());
-            Debug.Log(input);
-            Debug.Log(jsonData["LevelNum"].ToString());
-            LevelNum = int.Parse(jsonData["LevelNum"].ToString());
+            JsonData jsonData = JsonMapper.ToObject(File.ReadAllText(userdataPath));
+            TotalLevelNum = int.Parse(jsonData["LevelNum"].ToString());
             LastNotLockLevel = int.Parse(jsonData["LastNotLockLevel"].ToString());
             for (int i = 0; i < LevelNum; i++)
                 starnum[i] = int.Parse(jsonData["starnum"][i].ToString());
-
         }
         //reading userdata
         try
@@ -63,6 +52,7 @@ public class InterSceneData : MonoBehaviour
         }
         catch (IOException e)
         {
+            Debug.Log(e.Message);
             System.Console.Write("ERROE in reading userdata json");
         }
         finally
@@ -126,6 +116,7 @@ public class InterSceneData : MonoBehaviour
         }
         catch (System.IndexOutOfRangeException e)
         {
+            print(e.Message);
             print("level num out of range");
         }
     }
@@ -136,25 +127,36 @@ public class InterSceneData : MonoBehaviour
             yield return null;
         }
         GameObject root = GameObject.Find("Main Camera");
-        temp = root;
-        temp = GameObject.Find("Flag");
-        if (root == null) Debug.Log("camera not found");
-        GameObject Welcome = root.GetComponent<MainSceneManager>().GetWelcome();
+        GameObject Welcome = root.GetComponent<MainSceneManager>().Welcome;
         GameObject Choose = root.GetComponent<MainSceneManager>().Choose;
-        Debug.Log("delete");
-        Welcome.SetActive(false);
-        Choose.SetActive(true);
+        GameObject Mymap = root.GetComponent<MainSceneManager>().Mymap;
+        switch (prestatus)
+        {
+            case "LevelSelect":
+                Welcome.SetActive(false);
+                Mymap.SetActive(false);
+                Choose.SetActive(true);
+                break;
+            case "Mymap":
+                Welcome.SetActive(false);
+                Mymap.SetActive(true);
+                Choose.SetActive(false);
+                break;
+        }
+        
+       
     }
     public void PlayingSceneToMain()
     {
-        _p = SceneManager.LoadSceneAsync("Main");
+        SceneManager.LoadSceneAsync("Main");
         StartCoroutine(EndofLoading());
     }
 
-    private void OnApplicationQuit()
+    public void SaveUserData()
     {
+        //create json
         JsonData userdata = new JsonData();
-        userdata["Levelnum"] = 25;
+        userdata["LevelNum"] = TotalLevelNum;
         userdata["LastNotLockLevel"] = LastNotLockLevel;
         userdata["starnum"] = new JsonData();
         for (int i = 0; i < LevelNum; i++)
@@ -168,6 +170,11 @@ public class InterSceneData : MonoBehaviour
         sw.Write(json);
         sw.Close();
         sw.Dispose();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveUserData();
     }
 }
 
