@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160b1c6dce86be749bbad644a1a5233a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferGatePrefab: {fileID: 1712231874119322, guid: d576a57c2607a6f4e9b8f72259b18854,
+  transferGatePrefab: {fileID: 1712231874119322, guid: 27483f339ab6e564281818ca492da9c6,
     type: 2}
 --- !u!114 &125411307
 MonoBehaviour:
@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ede5f136bd74774eafee3dbb4c0695c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackHolePrefab: {fileID: 1930676460219808, guid: a66a66fdd2a361e49a7e764c2357ebe7,
+  blackHolePrefab: {fileID: 1930676460219808, guid: 8e19eea78ec070543ba5cb163021ed33,
     type: 2}
 --- !u!114 &641796394
 MonoBehaviour:
@@ -2336,7 +2336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e377a3bcbff6c244ad05e9c3deb036b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagPrefab: {fileID: 1144539357072212, guid: e4ce33588bd4233419b3a8c04d289f72, type: 2}
+  flagPrefab: {fileID: 1144539357072212, guid: 99bd97f56bd1e8748af89df92fd2e78d, type: 2}
 --- !u!114 &1054878213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3009,7 +3009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4523cf41533dc1648a657dc91fbcf71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundPrefab: {fileID: 1545265793991614, guid: cc3dc33feff58e44db7ba9dc8c271bfe,
+  boundPrefab: {fileID: 1545265793991614, guid: fac1d4957e9cbab49ace24986c932787,
     type: 2}
 --- !u!1 &1353864611
 GameObject:
@@ -3059,7 +3059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84faeb0b7966548408785b1673742ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1307599660603446, guid: 177116fd2df6d8a408ac4356aab7208b,
+  playerPrefab: {fileID: 1307599660603446, guid: fed958c8e75f0e449aa73bbcde2d9c9b,
     type: 2}
 --- !u!114 &1353864614
 MonoBehaviour:
@@ -4207,7 +4207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b61fe5d47b87d3439266b1af45a8193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starPrefab: {fileID: 1176292978624186, guid: 5fdb8caf97806644b896e0f1611481af, type: 2}
+  starPrefab: {fileID: 1176292978624186, guid: 0374dddeaefcf5848958772455f37560, type: 2}
 --- !u!114 &2092787582
 MonoBehaviour:
   m_ObjectHideFlags: 0
