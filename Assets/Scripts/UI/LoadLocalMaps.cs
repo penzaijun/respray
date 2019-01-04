@@ -36,8 +36,8 @@ public class LoadLocalMaps : MonoBehaviour {
 				myNewMission.transform.SetParent(myMaps.transform);
                 myNewMission.transform.localScale = new Vector3(1.69f, 1, 1);
                 myNewMission.GetComponentsInChildren<Text>()[0].text = MapName;
-                myNewMission.GetComponentsInChildren<OpenMymap>()[0].Filename = "Mymap/" + FirstName + ".json";
-                myNewMission.GetComponentsInChildren<Upload>()[0].Filename = "Mymap/" + FirstName+ ".json";
+                myNewMission.GetComponentsInChildren<OpenMymap>()[0].Filename = "Mymap\\" + FirstName + ".json";
+                myNewMission.GetComponentsInChildren<Upload>()[0].Filename = FirstName+ ".json";
             }
 			//
 		}

@@ -185,8 +185,8 @@ public class PlayingManager : MonoBehaviour {
         float y = float.Parse(jd["player"]["y"].ToString());
         float size = float.Parse(jd["player"]["size"].ToString());
         Vector3 pos = new Vector3(x, y, 0f);
-        Player = Instantiate(player,pos,Quaternion.identity);
-        //Player = GameObject.Find("Player");
+        //Player = Instantiate(player,pos,Quaternion.identity);
+        Player = GameObject.Find("Player");
         Player.transform.position = pos;
         Player_Defaultpos = pos;
         Player.transform.localScale = new Vector3(size,size,1);
