@@ -21,7 +21,7 @@ public class Upload : MonoBehaviour {
 	}
 
     public void upload(){
-        this.gameObject.GetComponent<InteractWithServer> ().Upload(Filename);
+
         //server.GetComponent<InteractWithServer>().Upload(Filename);
     }
 }
