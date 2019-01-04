@@ -170,10 +170,10 @@ public class PlayingManager : MonoBehaviour {
         float x = float.Parse(jd["star"][i]["x"].ToString());
         float y = float.Parse(jd["star"][i]["y"].ToString());
         float size = float.Parse(jd["star"][i]["size"].ToString());
-        float angle = float.Parse(jd["star"][i]["angle"].ToString());
+        //float angle = float.Parse(jd["star"][i]["angle"].ToString());
         Vector3 pos = new Vector3(x, y, 0f);
         GameObject star_obj = Instantiate(star, pos, Quaternion.identity);
-        star_obj.transform.localEulerAngles = new Vector3(0.0f,0.0f,angle);
+        star_obj.transform.localEulerAngles = new Vector3(0.0f,0.0f,0.0f);
         star_obj.transform.localScale = new Vector3(size,size,1);
         Stars.Add(star_obj);
     }
@@ -191,6 +191,7 @@ public class PlayingManager : MonoBehaviour {
         Player_Defaultpos = pos;
         Player.transform.localScale = new Vector3(size,size,1);
         Player_Defaultsize = size;
+        
     }
 
     //load flag
@@ -204,12 +205,12 @@ public class PlayingManager : MonoBehaviour {
             float size = float.Parse(jd["Flag"][i]["size"].ToString());
             float angle = float.Parse(jd["Flag"][i]["angle"].ToString());
             Vector3 pos = new Vector3(x, y, 0f);
-            GameObject flag_object = Instantiate(flag,pos,Quaternion.identity);
+            //GameObject flag_object = Instantiate(flag,pos,Quaternion.identity);
             flag = GameObject.Find("Flag");
-            flag_object.transform.localScale = new Vector3(size,size,1);
-            flag_object.transform.position = pos;
-            flag_object.transform.localEulerAngles = new Vector3(0.0f,0.0f,angle);
-            Flags.Add(flag_object);
+            //flag_object.transform.localScale = new Vector3(size,size,1);
+            //flag_object.transform.position = pos;
+            //flag_object.transform.localEulerAngles = new Vector3(0.0f,0.0f,angle);
+            Flags.Add(flag);
         }
     }
     catch (Exception e) {}

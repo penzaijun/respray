@@ -25,7 +25,8 @@ public class AddPlayer : MonoBehaviour
             player.AddComponent<MouseDrag>();
             MapEditList.player = player;
             GlobalVriable.currentObject = player;
-
+            player.tag="Untagged";
+            player.GetComponent<PlayerController>().maxVelocity=0;
             GameObject obj1 = GameObject.Find("Canvas/Panel/TextAngle");
             GameObject obj2 = GameObject.Find("Canvas/Panel/InputFieldAngle");
             obj1.SetActive(false);
