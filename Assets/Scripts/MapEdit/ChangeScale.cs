@@ -32,7 +32,16 @@ public class ChangeScale : MonoBehaviour
             GlobalVriable.currentObject.transform.localScale = new Vector3((float)1.924 * slider.value * 2, (float)1.924 * slider.value * 2, (float)1.924 * slider.value * 2);
         else if (GlobalVriable.currentObject.tag == "TransferGate")
             GlobalVriable.currentObject.transform.localScale = new Vector3((float)2 * slider.value * 2, (float)2 * slider.value * 2, (float)1.924 * slider.value * 2);
-        else
+        else if (GlobalVriable.currentObject.tag == "Blackhole")
+        {
+            GlobalVriable.currentObject.transform.localScale = new Vector3((float)2 * slider.value * 2, (float)2 * slider.value * 2, (float)1.924 * slider.value * 2);
+            Transform temp=GlobalVriable.currentObject.transform;
+		    int childCount = temp.childCount;
+		    for (int i = 0; i < childCount ; i++) {
+			    temp.GetChild(i).gameObject.transform.localScale = new Vector3((float)2 * slider.value * 2, (float)2 * slider.value * 2, (float)1.924 * slider.value * 2);;
+		    }
+        }
+            else
             GlobalVriable.currentObject.transform.localScale = new Vector3(slider.value * 2, slider.value * 2, slider.value * 2);
     }
 }
