@@ -5,15 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Flag : MonoBehaviour {
-    public GameObject pass;
-    public GameObject confirm;
-
+    public GameObject WinUI;
+    
+    
     void Awake() {
     }
 	// Use this for initialization
 	void Start () {
-            pass.SetActive(false);
-            confirm.SetActive(false);
+         
 	}
 	
 	// Update is called once per frame
@@ -26,11 +25,10 @@ public class Flag : MonoBehaviour {
         // 只有撞向玩家才会触发
         if (collider.CompareTag("Player"))
         {
-            pass.SetActive(true);
-            confirm.SetActive(true);
+            WinUI.SetActive(true);
             GameObject InterSceneData = GameObject.Find("InterSceneData");
             InterSceneData.GetComponent<InterSceneData>().SetStarNum(collider.gameObject.GetComponent<PlayerController>().getF(),InterSceneData.GetComponent<InterSceneData>().getLevelNum());
-            
+            collider.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotationZ;
         }
     }
 

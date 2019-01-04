@@ -18,6 +18,8 @@ public class PlayingManager : MonoBehaviour {
 	public List <GameObject> SpeedGates=new List <GameObject> ();
 	public GameObject Player = null;
     public int level;
+    public GameObject WinUi;
+    public GameObject LoseUI;
     private float Player_Defaultsize;
     private Vector3 Player_Defaultpos;
 
@@ -193,7 +195,7 @@ public class PlayingManager : MonoBehaviour {
     for (int i = 0; i < jd["Flag"].Count; i++)
     {
         //GameObject flag = GameObject.FindWithTag("Flag");
-        GameObject flag = (GameObject)Resources.Load("Prefabs/GameObject/Flag");
+        /*GameObject flag = (GameObject)Resources.Load("Prefabs/GameObject/Flag");
         float x = float.Parse(jd["Flag"][i]["x"].ToString());
         float y = float.Parse(jd["Flag"][i]["y"].ToString());
         float size = float.Parse(jd["Flag"][i]["size"].ToString());
@@ -203,6 +205,7 @@ public class PlayingManager : MonoBehaviour {
         //flag_object.transform.localScale *= size;
         //Flags.Add(flag_object);
         flag.transform.position = pos;
+        */
     }
 
     //load Bound
@@ -305,10 +308,10 @@ public class PlayingManager : MonoBehaviour {
     }
     }
 
-    void resetPlayer()
+    public void resetPlayer()
     {
-        GameObject Player = (GameObject)Resources.Load("Prefabs/Player");
-        Player.transform.position = Player_Defaultpos;
-        Player.transform.localScale *= Player_Defaultsize;
+        GameObject player = (GameObject)Resources.Load("Prefabs/Player");
+        player.transform.localScale *= Player_Defaultsize;
+        GameObject Player = Instantiate(player, Player_Defaultpos, Quaternion.identity);
     }
 }
