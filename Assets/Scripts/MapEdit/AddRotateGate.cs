@@ -23,6 +23,7 @@ public class AddRotateGate : MonoBehaviour
         rotateGate.AddComponent<MouseDrag>();
         MapEditList.rotateGateList.Add(rotateGate);
         GlobalVriable.currentObject = rotateGate;
+        rotateGate.AddComponent<BoxCollider>();
 
         GameObject obj1 = GameObject.Find("Canvas/Panel/TextAngle");
         GameObject obj2 = GameObject.Find("Canvas/Panel/InputFieldAngle");
