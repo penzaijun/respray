@@ -42,8 +42,8 @@ public class InterSceneData : MonoBehaviour
             JsonData jsonData = JsonMapper.ToObject(File.ReadAllText(userdataPath));
             TotalLevelNum = int.Parse(jsonData["LevelNum"].ToString());
             LastNotLockLevel = int.Parse(jsonData["LastNotLockLevel"].ToString());
-            for (int i = 0; i < LevelNum; i++)
-                starnum[i] = int.Parse(jsonData["starnum"][i].ToString());
+            for (int i = 0; i < TotalLevelNum; i++)
+              starnum[i] = int.Parse(jsonData["starnum"][i].ToString());
         }
         //reading userdata
         try
@@ -79,6 +79,7 @@ public class InterSceneData : MonoBehaviour
     {
         LevelNum = l;
         levelmapPath = "Assets/Data/LevelData/" + l.ToString() + ".json";
+        prestatus = "LevelSelect";
     }
 
     public string getPath()
@@ -89,6 +90,7 @@ public class InterSceneData : MonoBehaviour
     public void setPath(string path)
     {
         levelmapPath = path;
+        prestatus = "Mymap";
     }
 
     // 获取scene的序号
@@ -99,8 +101,6 @@ public class InterSceneData : MonoBehaviour
 
     public void SetStarNum(int newstarnum, int level)
     {
-        Debug.Log(level.ToString());
-        Debug.Log(newstarnum.ToString());
         try
         {
             if (starnum[level - 1] < newstarnum)
@@ -141,6 +141,7 @@ public class InterSceneData : MonoBehaviour
                 Welcome.SetActive(false);
                 Mymap.SetActive(true);
                 Choose.SetActive(false);
+                Mymap.GetComponent<LoadLocalMaps>().LoadMaps();
                 break;
         }
         
@@ -159,7 +160,7 @@ public class InterSceneData : MonoBehaviour
         userdata["LevelNum"] = TotalLevelNum;
         userdata["LastNotLockLevel"] = LastNotLockLevel;
         userdata["starnum"] = new JsonData();
-        for (int i = 0; i < LevelNum; i++)
+        for (int i = 0; i < TotalLevelNum; i++)
             userdata["starnum"].Add(starnum[i]);
 
         //save user data

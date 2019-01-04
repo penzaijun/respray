@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public float scale_change_speed;
     public GameObject effect;
-
+    
     public float maxVelocity;
     // Create private references to the rigidbody component on the player, and the count of pick up objects picked up so far
     private Rigidbody rb;
@@ -32,34 +32,38 @@ public class PlayerController : MonoBehaviour {
     // Each physics step..
     void FixedUpdate()
     {
-        // Set some local float variables equal to the value of our Horizontal and Vertical Inputs
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
-        if (moveHorizontal != 0 || moveVertical != 0)
-        {
-            scale -= scale_change_speed;
-            transform.localScale = new Vector3(scale, scale, scale);
-
-            //mass change
-            rb.mass = scale;
-            if (rb.mass < 0.1) rb.mass = 0.1f;
-
-            //game over judgement
-            if (scale < 0)
+      
+        
+            // Set some local float variables equal to the value of our Horizontal and Vertical Inputs
+            float moveHorizontal = Input.GetAxisRaw("Horizontal");
+            float moveVertical = Input.GetAxisRaw("Vertical");
+            if (moveHorizontal != 0 || moveVertical != 0)
             {
-                Destroy(this);
+                scale -= scale_change_speed;
+                transform.localScale = new Vector3(scale, scale, scale);
 
+                //mass change
+                rb.mass = scale;
+                if (rb.mass < 0.1) rb.mass = 0.1f;
+
+                //game over judgement
+                if (scale < 0)
+                {
+                GameObject.Find("Playing Camera").GetComponent<PlayingManager>().LoseUI.SetActive(true);
+                    Destroy(this);
+                }
             }
-        }
-        // Create a Vector3 variable, and assign X and Z to feature our horizontal and vertical float variables above
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
+            // Create a Vector3 variable, and assign X and Z to feature our horizontal and vertical float variables above
+            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
 
-        // Add a physical force to our Player rigidbody using our 'movement' Vector3 above, 
-        // multiplying it by 'speed' - our public player speed that appears in the inspector
-        rb.AddForce(movement * speed);
-        var velocity = this.rb.velocity;
-        if (velocity.magnitude > maxVelocity)
-            this.rb.velocity = velocity.normalized * maxVelocity;
+            // Add a physical force to our Player rigidbody using our 'movement' Vector3 above, 
+            // multiplying it by 'speed' - our public player speed that appears in the inspector
+            rb.AddForce(movement * speed);
+            var velocity = this.rb.velocity;
+            if (velocity.magnitude > maxVelocity)
+                this.rb.velocity = velocity.normalized * maxVelocity;
+        
+       
     }
 
     // When this game object intersects a collider with 'is trigger' checked, 

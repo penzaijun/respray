@@ -21,8 +21,6 @@ public class PlayingSceneUI : MonoBehaviour {
 
     public void BackToMain()
     {
-        GameObject player = GameObject.Find("Player");
-        int starnum = player.GetComponent<PlayerController>().getF();
         InterSceneData.GetComponent<InterSceneData>().PlayingSceneToMain();
         // SceneManager.LoadScene("Main");
         // GameObject root = GameObject.FindWithTag("MainCamera");
